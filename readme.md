@@ -1,4 +1,7 @@
-<p>not clone...</p>
+## 다운 및 클론 하시면 실행이 안될수 있습니다.
+laravel 공부 중인 프로젝트입니다.
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
