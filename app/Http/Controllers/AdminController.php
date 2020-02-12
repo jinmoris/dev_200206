@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
-use RealRashid\SweetAlert\Facades\Alert; //경고창
 use Session;
+use App\User;
+use Illuminate\Support\Facades\Hash;
+use RealRashid\SweetAlert\Facades\Alert; //경고창
+
 
 class AdminController extends Controller
 {
@@ -15,7 +18,7 @@ class AdminController extends Controller
             $data = $request->input();
             
             $email = $data['email'];
-            $password = $data['password'];
+            $password = $data['password'];            
 
             if(Auth::attempt(['email' => $email, 'password' => $password, 'admin' => '1'])){
                 //echo "Success"; die;
@@ -50,9 +53,39 @@ class AdminController extends Controller
        
         return view('admin.dashboard');
     }
+    
     public function setting(){
-
         return view('admin.setting');
+    }
+
+    public function chkPassword(Request $request){
+        $data = $request->all();
+        $current_password = $data['current_pwd'];
+        //$check_password = User::where(['admin'=>'1'])->first(); //모델 인스턴스 하나를 반환
+        $check_password = User::where(['email' => Auth::user()->email])->first();
+        if(Hash::check($current_password, $check_password->password)){
+            echo "true"; die;
+        }else{
+            echo "false"; die;
+        }
+    }
+
+    public function updatePassword(Request $request){
+        if($request->isMethod('post')){
+            $data = $request->all();         
+            //echo "<pre>"; print_r($data); die;
+            $current_password = $data['current_pwd'];
+            $check_password = User::where(['email' => Auth::user()->email])->first();
+            if($data['chkpaswd'] == "OK" && Hash::check($current_password, $check_password->password)){
+                $user_id = Auth::user()->email;
+                $password = bcrypt($data['new_pwd']);
+                User::where('email',$user_id)->update(['password'=>$password]);
+                return redirect('/admin/setting')->with('flash_message_success','변경 되었습니다.');
+            }else{
+                return redirect('/admin/setting')->with('flash_message_error','변경 사항이 처리 되지 못했습니다.');
+            }
+
+        }
     }
     
     public function logout(){

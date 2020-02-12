@@ -32,20 +32,20 @@
                 <div class="control-group">
                     <div class="controls">
                         <div class="main_input_box">
-                            <span class="add-on bg_lg"><i class="icon-user"> </i></span><input type="email" name="email" placeholder="Username" />
+                            <span class="add-on bg_lg"><i class="icon-user"> </i></span><input type="email" name="email" placeholder="아이디" />
                         </div>
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="controls">
                         <div class="main_input_box">
-                            <span class="add-on bg_ly"><i class="icon-lock"></i></span><input type="password" name="password" placeholder="Password" />
+                            <span class="add-on bg_ly"><i class="icon-lock"></i></span><input type="password" name="password" placeholder="비밀번호" />
                         </div>
                     </div>
                 </div>
                 <div class="form-actions">
-                    <span class="pull-left"><a href="#" class="flip-link btn btn-info" id="to-recover">Lost password?</a></span>
-                    <span class="pull-right"><input  type="submit"  class="btn btn-success"  value="Login"/></span>
+                    <span class="pull-left"><a href="#" class="flip-link btn btn-info" id="to-recover">비밀번호 분실 하셨나요?</a></span>
+                    <span class="pull-right"><input  type="submit"  class="btn btn-success"  value="로그인"/></span>
                 </div>
             </form>
             <form id="recoverform" action="#" class="form-vertical">
@@ -58,7 +58,7 @@
                     </div>
                
                 <div class="form-actions">
-                    <span class="pull-left"><a href="#" class="flip-link btn btn-success" id="to-login">&laquo; Back to login</a></span>
+                    <span class="pull-left"><a href="#" class="flip-link btn btn-success" id="to-login">&laquo; 뒤로가기</a></span>
                     <span class="pull-right"><a class="btn btn-info"/>Reecover</a></span>
                 </div>
             </form>
