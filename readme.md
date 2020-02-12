@@ -1,15 +1,15 @@
 ## 다운 및 클론 하시면 실행이 안될수 있습니다.
 laravel 공부 중인 프로젝트입니다.
 
-## sweet-alert 의존성 설치
+## sweet-alert  설치
 composer require realrashid/sweet-alert
 
-- 마스터 블레이드 레이아웃에 @include('sweetalert::alert') 넣는다
-- php artisan vendor:publish --provider="RealRashid\SweetAlert\SweetAlertServiceProvider"
-- 컨트롤러에 삽입:
- - use RealRashid\SweetAlert\Facades\Alert;
- - 넣은 위치에 소스를 삽입한다. (예, Alert::success('저장', '저장이 완료 되었습니다.');)
-- 레이아웃:
+* 마스터 블레이드 레이아웃에 @include('sweetalert::alert') 넣는다
+* php artisan vendor:publish --provider="RealRashid\SweetAlert\SweetAlertServiceProvider"
+* 컨트롤러에 삽입:
+* use RealRashid\SweetAlert\Facades\Alert;
+* 넣은 위치에 소스를 삽입한다. (예, Alert::success('저장', '저장이 완료 되었습니다.');)
+* 레이아웃:
 <pre><code>
  Alert::alert('저장', '저장이 완료 되었습니다.');
  Alert::success('저장', '저장이 완료 되었습니다.');
@@ -20,8 +20,8 @@ composer require realrashid/sweet-alert
  Alert::html('Html Title', 'Html Code', 'Type');
  Alert::toast('Toast Message', 'Toast Type');
  </code></pre>
- 
-- 예제:
+
+* 예제:
 ▶패스워드변경완료 경고창 설정
 <pre><code>
 \vendor\laravel\framework\src\Illuminate\Auth\Notifications\ResetPassword.php
