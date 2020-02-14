@@ -13,6 +13,14 @@ use RealRashid\SweetAlert\Facades\Alert; //경고창
 class AdminController extends Controller
 {
     public function login(Request $request){
+
+       /*
+        if(Auth::check()){
+            echo "이미로그인중";die;
+        }else{
+            echo "로그인전";die;
+        }
+        */
         
         if($request->isMethod('post')){
             $data = $request->input();
