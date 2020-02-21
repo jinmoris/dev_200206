@@ -25,6 +25,7 @@ class RedirectIfAuthenticated
             //경고창1
             Alert::warning('Warning', '접속 권한이 없습니다.');
             return redirect()->action('AdminController@login');               
+            
             //경고창2
             //return redirect()->action('AdminController@login')->width('flash_message_success','접속 권한이 없습니다.');
         }
